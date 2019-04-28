@@ -72,6 +72,7 @@ background-image: url("/assets/Roadmap\ Vector-01.jpg");
 }
 
 
+
 .title a{
     font-size: 20px;
     display: block;
@@ -85,9 +86,13 @@ background-image: url("/assets/Roadmap\ Vector-01.jpg");
     background-color:#e0f2f2;
     color: #000;
 }
+
+.right-navbar a.active{
+    background-color:#e0f2f2;
+    color: #000;
+}
 .right-navbar{
     padding-left: 62%;
-
 }
 
 .side-nav{
