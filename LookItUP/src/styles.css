@@ -396,25 +396,6 @@ textarea:focus {
     box-sizing: border-box;
   }
 
-  .index-parallax2{
-    /* The image used */
-    background-image: url('assets/belfast-01.png');
-    /* Full height */
-    height: 500px; 
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.index-parallax3{
-    /* The image used */
-    background-image: url('assets/mapa2.gif');
-    /* Full height */
-    height: 800px; 
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .parallax-contact{
           /* The image used */
