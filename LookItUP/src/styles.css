@@ -1,1 +1,436 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: #e0f2f2;
+    color: #333333;
+}
+
+
+footer { 
+    padding-top: 20px;
+    padding-left: 20px;
+    margin: 0;
+    display: block;
+    padding-bottom: 20px;
+    background-color: #26a59a;
+    color:white;
+  }
+
+  .column{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .row:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+
+.main-map{
+background-color: rgb(207, 207, 207);
+height: 800px;
+background-image: url("/assets/Roadmap\ Vector-01.jpg");
+}
+
+.menu-bars{
+    font-size: 24px;
+    
+}
+
+.navbar{
+    background-color: #26a59a;
+    overflow: hidden;
+    height: 63px;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+.navbar ul{
+    margin: 8px 0 0 0;
+    list-style: none;
+    
+}
+
+
+.title a{
+    font-size: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.right-navbar a:hover {
+    background-color:#e0f2f2;
+    color: #000;
+}
+.right-navbar{
+    padding-left: 62%;
+
+}
+
+.side-nav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e0f2f2;
+    overflow-x: hidden;
+    padding-top: 4%;
+    transition: 0.5s;
+    color: #333333;
+    
+}
+
+.side-nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+.side-nav a:hover {
+    color: #26a59a;
+}
+
+.side-nav .btn-close{
+    position:absolute;
+    top: 0;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+
+h4{
+    color:white;
+    padding: 20px 20px 20px 25px;
+}
+
+form{
+    padding-left:5%;
+}
+
+.side-nav input[type=text], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+input:focus {
+    outline: none;
+    border:1px #26a59a;
+    box-shadow: 0 0 10px #26a59a;
+}
+
+textarea:focus {
+    outline: none;
+    border:1px #26a59a;
+    box-shadow: 0 0 10px #26a59a;
+}
+
+
+::placeholder{
+      color:rgb(134, 134, 134);
+  }
+  
+#main{
+    transition: margin-left 0.5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.register{
+    background-color:rgba(178, 223, 219, 0.404);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.register input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .register h2{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+  .login {
+      background-color:rgba(178, 223, 219, 0.404);
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 2%;
+      margin-bottom: 10.1%;
+      padding-bottom: 5%;
+      box-shadow: 5px 10px 18px #888888;
+  }
+
+  .login h2{
+      padding-bottom: 30px;
+      padding-top: 30px;
+      font-size: 30px;
+  }
+
+  .login input,select{
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .submit-button{
+    background-color: #26a59a; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 90%;
+    cursor: pointer;
+  }
+
+  .submit-button-index {
+    background-color: #26a59a; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 50%;
+    cursor: pointer;
+  }
+  .contact {
+    margin-bottom: 10%;
+    padding-top: 50px;
+  }
+
+  .contact h2 {
+      padding-bottom: 50px;
+      font-size: 30px;
+  }
+
+  .contact input,select{
+    width: 80%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+
+  .contact input select, textarea {
+    width: 80%;
+    height: 200px;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+
+  .about {
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 5%;
+      font-size: 18px;
+      padding-bottom: 50px;
+  }
+
+  .social-media-row{
+      padding-top: 5%;
+      display: inline-block;
+      clear: left;
+  }
+
+  .top-pad{
+      padding-top: 50px;
+  }
+
+  .div-color{
+      background-color: #26a59a;
+      margin-top: 2%;
+  }
+
+ .public-transpo-vehicles li{
+     text-decoration: none;
+     font-size: 10px;
+ }
+
+ .details-list-class{
+     padding-left: 5%;
+     font-size: 16px;
+     padding-bottom: 40%;
+ }
+
+ .details-list-class li {
+     padding-top: 2%;
+     padding-bottom: 2%;
+ }
+
+ .parallax {
+    /* The image used */
+    background-image: url('assets/about.jpg');
+    /* Full height */
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  
+  .main-title{
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 200px;
+    color: #ffffff;
+  }
+
+  .index-title {
+      font-size: 60px;
+      font-weight: 700;
+      text-align: left;
+      padding: 250px;
+      padding-left: 50px;
+      color: #ffffff;
+  }
+
+  .index-parallax{
+          /* The image used */
+    background-image: url('assets/optimize_route_dribb_full_frame_gif__1.gif');
+    /* Full height */
+    background-attachment: fixed;
+    height: 700px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .index-caption {
+      padding: 50px;
+  }
+
+  .index-caption h1 {
+      text-align: center;
+  }
+  .index-caption form {
+      padding-top: 30px;
+      padding-left: 35%;
+      height: 50%;
+      padding-bottom: 50px;
+  }
+
+
+  .index-caption input {
+    width: 50%;
+    padding: 12px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .index-parallax2{
+    /* The image used */
+    background-image: url('assets/belfast-01.png');
+    /* Full height */
+    height: 500px; 
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index-parallax3{
+    /* The image used */
+    background-image: url('assets/mapa2.gif');
+    /* Full height */
+    height: 800px; 
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-contact{
+          /* The image used */
+          background-image: url('assets/contact_favourites.png');
+          /* Full height */
+          background-attachment: fixed;
+          height: 600px; 
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+}
+
+.contact-us-heading {
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 200px;
+    color: #2c2c2c;
+}
