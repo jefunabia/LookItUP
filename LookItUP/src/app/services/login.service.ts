@@ -80,7 +80,7 @@ export class LoginService {
       documentSnapshot => {
         var userModel = documentSnapshot.data() as UserModel;
         this.toastr.success("Welcome back, " + userModel.displayName, "Authentication Success");
-        this.router.navigate(['./home']);
+        this.router.navigate(['./main']);
       }
     )
     
@@ -92,7 +92,5 @@ export class LoginService {
     this.tokenService.removeCurrentUserToken();
     this.router.navigate(['./login']);
   }
-
-  
 
 }
