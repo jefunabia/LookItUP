@@ -12,15 +12,31 @@ import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ToastrModule } from 'ngx-toastr';
-import { RegisterServiceService } from './shared/register-service.service';
 
+import { RegisterService } from './services/register.service';
 
+import { LoginComponent } from '@components/login/login.component';
+import { RegisterComponent } from '@components/register/register.component';
+import { AboutComponent } from '@components/about/about.component';
+import { ContactComponent } from '@components/contact/contact.component';
+import { HomeComponent } from '@components/home/home.component';
+import { MainComponent } from '@components/main/main.component';
+
+import { PasswordSecurityService } from './services/password-security.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
+import { UserService } from './services/user.service';
+import { TokenService } from './services/token.service';
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    RegisterComponent,
+    LoginComponent,
+    AboutComponent,
+    ContactComponent,
+    HomeComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +47,7 @@ import { RegisterServiceService } from './shared/register-service.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [RegisterServiceService],
+  providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
