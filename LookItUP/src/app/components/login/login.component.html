@@ -29,12 +29,12 @@
   </div>
 
   <div class="login">
-    <form>
+    <form #loginForm="ngForm" autocomplete="off" (submit)="onSubmit()">
       <h2>Login</h2>
       <h3>Username:</h3>
-      <input type="text" name="username" placeholder="Enter your Username">
+      <input type="text" name="username" placeholder="Enter your Username" #userLoginModelUsernameText="ngModel" [(ngModel)]="userModel.username">
       <h3>Password:</h3>
-      <input type="password" name="password" placeholder="Enter your Password"><br>
+      <input type="password" name="password" placeholder="Enter your Password" #userLoginModelPasswordText="ngModel" [(ngModel)]="userModel.password"><br>
       <button class="submit-button">Login</button>
     </form>
   </div>
