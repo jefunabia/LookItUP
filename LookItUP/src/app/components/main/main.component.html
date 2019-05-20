@@ -1,3 +1,35 @@
-<p>
-  main works!
-</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LookItUP | Find Your Path!</title>
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="nav-class">
+      <nav class="navbar">
+          <ul>
+              <div class="title">
+                  <li><a routerLink="/home">LookItUP | Welcome back! {{userModel.displayName}}</a></li>
+              </div>
+              <div class="right-navbar">
+                  <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+                  <li><a routerLink="/main" routerLinkActive="active">Web App</a></li>
+                  <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+                  <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
+                  <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+                  <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                  <li><a (click)="signOut()">Logout</a></li>
+              </div>
+          </ul>
+      </nav>
+  </div>
+
+    <div id="main" class="main-map">
+        <h1>Map goes here</h1>
+    </div>
+
+</body>
