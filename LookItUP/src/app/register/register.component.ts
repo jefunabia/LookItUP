@@ -41,6 +41,6 @@ export class RegisterComponent implements OnInit {
     let data = form.value;
     this.firestore.collection('registeredUsers').add(data);
     this.resetForm(form);
-    this.toastr.success('Registration Success!');
+    this.toastr.success('You may now login!','Account Creation Success!');
   }
 }
