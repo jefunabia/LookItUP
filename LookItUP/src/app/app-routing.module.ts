@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { MainComponent } from './main/main.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { MainComponent } from './components/main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
-  { path: 'main', component: MainComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, },
+  { path: 'main', component: MainComponent, },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'contact', component: ContactComponent}
+  { path: 'about', component: AboutComponent, },
+  { path: 'contact', component: ContactComponent, }
 ];
 
 @NgModule({
