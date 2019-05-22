@@ -27,6 +27,9 @@ import { PasswordSecurityService } from './services/password-security.service';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import { UserService } from './services/user.service';
 import { TokenService } from './services/token.service';
+
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,10 @@ import { TokenService } from './services/token.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    })
   ],
   providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
   bootstrap: [AppComponent]
