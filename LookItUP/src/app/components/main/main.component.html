@@ -27,9 +27,8 @@
           </ul>
       </nav>
   </div>
-
-    <div id="main" class="main-map">
-        <h1>Map goes here</h1>
-    </div>
-
 </body>
+
+<agm-map [latitude]="lat" [longitude]="lon" (mapClick)="onChoseLocation($event)">
+    <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+</agm-map>

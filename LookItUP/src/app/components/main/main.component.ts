@@ -11,6 +11,8 @@ import { UserService } from '@app/services/user.service';
 })
 export class MainComponent implements OnInit {
   userModel: UserModel = {};
+  lat = 10.322270;
+  lon = 123.898219;
 
   constructor(private toastr : ToastrService,
     private loginService: LoginService,
@@ -27,6 +29,11 @@ export class MainComponent implements OnInit {
   signOut(){
     this.loginService.logoutUser();
     this.toastr.success('Signed out successfully!')
+  }
+
+  onChoseLocation(event){
+    this.lat = event.coords.lat;
+    this.lon = event.coords.lng;
   }
 
 }
