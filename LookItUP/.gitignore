@@ -47,4 +47,8 @@ Thumbs.db
 
 # files with API keys
 /src/app/app.module.ts
+<<<<<<< HEAD
 /src/environments/environment.ts
+=======
+/src/environments/environment.ts
+>>>>>>> 3b290bc3d06bae1894ea3de645f733520c736c8a
