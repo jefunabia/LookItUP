@@ -12,8 +12,8 @@ import { MapsService } from '@app/services/maps.service';
 })
 export class MainComponent implements OnInit {
   userModel: UserModel = {};
-  lat: string = '';
-  lon: string = '';
+  lat: number;
+  lon: number;
 
   location: Object;
 
@@ -26,10 +26,15 @@ export class MainComponent implements OnInit {
     this.map.getLocation().subscribe(
       data => {
       console.log(data);
-      this.lat = data.latitude;
-      this.lon = data.longitude;
+   }
+  )
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.lat = position.coords.latitude;
+        this.lon = position.coords.longitude;
+      })
     }
-    )
 
     this.userService.getCurrentUser().subscribe(
       documentSnapshot => {

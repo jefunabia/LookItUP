@@ -30,5 +30,10 @@
 </body>
 
 <agm-map [latitude]="lat" [longitude]="lon" (mapClick)="onChoseLocation($event)">
-    <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+    <agm-marker [latitude]="lat" [longitude]="lon">
+        <agm-info-window>
+            <h3><strong>Hello there!</strong></h3>
+            <p>You are here!</p>
+        </agm-info-window>
+    </agm-marker>
 </agm-map>
