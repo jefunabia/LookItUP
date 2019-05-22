@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
 
   signOut(){
     this.loginService.logoutUser();
-    this.toastr.success(Signed out successfully!')
+    this.toastr.success('Signed out successfully!')
   }
 
 }
