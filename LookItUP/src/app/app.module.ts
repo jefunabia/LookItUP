@@ -50,7 +50,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'testtttttt'
+      apiKey: 'testtttttasdasdt'
     })
   ],
   providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
