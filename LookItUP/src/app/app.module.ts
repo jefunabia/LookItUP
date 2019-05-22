@@ -52,7 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: '-'
+      apiKey: environment.googleMapsKey
     }),
     HttpClientModule
   ],
