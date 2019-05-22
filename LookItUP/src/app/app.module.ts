@@ -29,6 +29,8 @@ import { UserService } from './services/user.service';
 import { TokenService } from './services/token.service';
 
 import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -50,8 +52,9 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'test'
-    })
+      apiKey: '-'
+    }),
+    HttpClientModule
   ],
   providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
   bootstrap: [AppComponent]
