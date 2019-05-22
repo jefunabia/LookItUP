@@ -46,5 +46,5 @@ testem.log
 Thumbs.db
 
 # files with API keys
-app.module.ts
-environment.ts
+/src/app/app.module.ts
+/src/environments/environment.ts
