@@ -5,6 +5,17 @@ agm-map {
 
 #side-bar {
     top: 0px;
-    width: 500px;
+    width: 450px;
     bottom: 0px;
+}
+
+.tsa {
+    padding-top: 5%;
+}
+
+.tsa p {
+    padding-top: 10px;
+}
+.tsa h3 {
+    padding-left: 20px;
 }
