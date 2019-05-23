@@ -25,6 +25,7 @@
     "crypto-js": "^3.1.9-1",
     "firebase": "^6.0.2",
     "jquery": "^3.4.1",
+    "ngx-google-places-autocomplete": "^2.0.3",
     "ngx-toastr": "^10.0.4",
     "rxjs": "~6.3.3",
     "toastr": "^2.1.4",

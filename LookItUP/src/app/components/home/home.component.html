@@ -36,10 +36,10 @@
         <h1>Where are you going?</h1>
         <form>
             <h3>Enter Starting Point:</h3>
-            <input type="text" name="starting-point" placeholder="Starting Point">
+            <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="starting-point" placeholder="Starting Point"/>
             <h3>Enter Destination Point:</h3>
-            <input type="text" name="destination-point" placeholder="Destination Point">
-            <button class="submit-button-index">GO!</button>
+            <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="destination-point" placeholder="Destination Point"/>
+            <button class="submit-button-index" routerLink="/main">GO!</button>
         </form>
         
     </div>

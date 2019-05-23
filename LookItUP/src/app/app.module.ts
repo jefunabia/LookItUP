@@ -31,6 +31,7 @@ import { TokenService } from './services/token.service';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     AgmCoreModule.forRoot({
       apiKey: environment.googleMapsKey
     }),
-    HttpClientModule
+    HttpClientModule,
+    GooglePlaceModule
   ],
   providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
   bootstrap: [AppComponent]

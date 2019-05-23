@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '@app/services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { UserModel } from '@app/models/user-model';
+import { InputsModel } from '@app/models/inputs-model';
 import { UserService } from '@app/services/user.service';
 import { MapsService } from '@app/services/maps.service';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-main',
@@ -13,6 +13,8 @@ import * as $ from 'jquery';
 })
 export class MainComponent implements OnInit {
   userModel: UserModel = {};
+  inputsModel: InputsModel = {};
+  
   lat: number;
   lon: number;
 
@@ -60,9 +62,20 @@ export class MainComponent implements OnInit {
     document.getElementById('side-bar').style.width = '500px';
     document.getElementById('main').style.marginLeft = '500px';
   }
-  
+
   closeSideMenu(){
     document.getElementById('side-bar').style.width = '0';
     document.getElementById('main').style.marginLeft = '0';
   }
+
+  formattedAddress = '';
+  options = {
+    componentRestrictions : {
+      country: ['PH']
+    }
+  }
+  public handleAddressChange(address: any) {
+    this.formattedAddress = address.formatted_address;
+}
+
 }

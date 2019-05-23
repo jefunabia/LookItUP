@@ -39,9 +39,9 @@
     <a class="btn-close" (click)="closeSideMenu()">&times;</a>
     <form>
     <h3>Enter Starting Point:</h3>
-    <input type="text" name="starting-point" placeholder="Starting Point">
+    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="starting-point" placeholder="Starting Point" value="{{something}}"/>
     <h3>Enter Destination Point:</h3>
-    <input type="text" name="destination-point" placeholder="Destination Point">
+    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="destination-point" placeholder="Destination Point" value="{{something}}"/>
    </form>
    <button class="main-submit-button">GO!</button>
  <div class="div-color">

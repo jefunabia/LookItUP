@@ -12,4 +12,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  formattedAddress = '';
+  options = {
+    componentRestrictions : {
+      country: ['PH']
+    }
+  }
+  public handleAddressChange(address: any) {
+    this.formattedAddress = address.formatted_address;
+}
+
+
 }
