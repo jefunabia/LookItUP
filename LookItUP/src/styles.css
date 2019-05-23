@@ -109,7 +109,7 @@ background-image: url("/assets/Roadmap\ Vector-01.jpg");
     padding-top: 4%;
     transition: 0.5s;
     color: #333333;
-    
+
 }
 
 .side-nav a{
@@ -323,6 +323,10 @@ textarea:focus {
      text-decoration: none;
      font-size: 10px;
  }
+
+ .public-transpo-vehicles li a:hover {
+    background-color:#c9dbdb;
+}
 
  .details-list-class{
      padding-left: 5%;
