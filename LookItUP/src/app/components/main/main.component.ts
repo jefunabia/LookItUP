@@ -78,4 +78,70 @@ export class MainComponent implements OnInit {
     this.formattedAddress = address.formatted_address;
 }
 
+// Details
+public createListItem(type){
+  var listItem = document.createElement("li");
+  listItem.innerHTML = type
+  return listItem;
+}
+public createListItemWithCost(type: any, cost: any){
+  var listItem = document.createElement("li");
+  listItem.innerHTML = type + cost + "   PHP";
+  return listItem;
+}
+
+
+showJeepneyDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Jeepney Route, ",7);
+  detailsList.appendChild(listItem);
+}
+
+showTaxiDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Taxi, ",40);
+  detailsList.appendChild(listItem);
+}
+
+showMotorcycleDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Motorcycle, ",30);
+  detailsList.appendChild(listItem);
+}
+
+showTricycleDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Tricycle, ",30);
+  detailsList.appendChild(listItem);
+}
+
+showBusDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Bus, ",50);
+  detailsList.appendChild(listItem);
+}
+
+showTrainDetails(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var listItem = this.createListItemWithCost("Train, ",30);
+  detailsList.appendChild(listItem);
+}
+
+showTSA(){
+  var detailsList = document.getElementById("details-list");
+  detailsList.innerHTML = "";
+  var angkasListItem = this.createListItem("Angkas");
+  var grabListItem = this.createListItem("Grab");
+  var uberListItem = this.createListItem("Uber");
+  detailsList.appendChild(angkasListItem);
+  detailsList.appendChild(grabListItem);
+  detailsList.appendChild(uberListItem);
+}
+
 }
