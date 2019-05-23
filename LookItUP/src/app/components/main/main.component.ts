@@ -133,15 +133,5 @@ showTrainDetails(){
   detailsList.appendChild(listItem);
 }
 
-showTSA(){
-  var detailsList = document.getElementById("details-list");
-  detailsList.innerHTML = "";
-  var angkasListItem = this.createListItem("Angkas");
-  var grabListItem = this.createListItem("Grab");
-  var uberListItem = this.createListItem("Uber");
-  detailsList.appendChild(angkasListItem);
-  detailsList.appendChild(grabListItem);
-  detailsList.appendChild(uberListItem);
-}
 
 }

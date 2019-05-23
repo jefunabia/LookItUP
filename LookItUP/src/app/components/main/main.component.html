@@ -55,15 +55,19 @@
         <li><a (click)="showTricycleDetails()">Tricycle</a></li>
         <li><a (click)="showBusDetails()">Bus</a></li>
         <li><a (click)="showTrainDetails()">Train</a></li>
-        <li><a (click)="showTSA()">Transportation Services Applications</a></li>
+
     </ul>
 </div>
 
 <div class="div-color">
     <h4>Details:</h4>
+    
 </div>
     <div class="details">
-        <ul id="details-list" class="details-list-class"></ul>
+        <ul id="details-list" class="details-list-class">
+                <app-tsa></app-tsa>
+        </ul>
+        
 </div>
 </div>
 </body>

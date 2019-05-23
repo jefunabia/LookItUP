@@ -32,6 +32,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { TsaComponent } from './components/tsa/tsa.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    MainComponent
+    MainComponent,
+    TsaComponent
   ],
   imports: [
     BrowserModule,
