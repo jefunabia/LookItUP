@@ -2,3 +2,9 @@ agm-map {
     width: 100vw;
     height: 90vh;
 }
+
+#side-bar {
+    top: 0px;
+    width: 500px;
+    bottom: 0px;
+}

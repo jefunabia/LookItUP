@@ -11,6 +11,13 @@
 <body>
   <div class="nav-class">
       <nav class="navbar">
+            <span class="open-slide">
+                    <a (click)="openSideMenu()">
+                        <div class="menu-bars">
+                    <i class="fas fa-bars"></i>
+                </div>
+                </a>
+                </span>
           <ul>
               <div class="title">
                   <li><a routerLink="/home">LookItUP | Welcome back! {{userModel.displayName}}</a></li>
@@ -27,6 +34,37 @@
           </ul>
       </nav>
   </div>
+
+  <div id="side-bar" class="side-nav">
+    <a class="btn-close" (click)="closeSideMenu()">&times;</a>
+    <form>
+    <h3>Enter Starting Point:</h3>
+    <input type="text" name="starting-point" placeholder="Starting Point">
+    <h3>Enter Destination Point:</h3>
+    <input type="text" name="destination-point" placeholder="Destination Point">
+   </form>
+ <div class="div-color">
+    <h4>Public Transporation Vehicles:</h4>
+</div>
+<div class="public-transpo-vehicles">
+    <ul>
+        <li><a (click)="showJeepneyDetails()">Jeepney</a></li>
+        <li><a (click)="showTaxiDetails()">Taxi</a></li>
+        <li><a (click)="showMotorcycleDetails()">Motorcycle</a></li>
+        <li><a (click)="showTricycleDetails()">Tricycle</a></li>
+        <li><a (click)="showBusDetails()">Bus</a></li>
+        <li><a (click)="showTrainDetails()">Train</a></li>
+        <li><a (click)="showTSA()">Transportation Services Applications</a></li>
+    </ul>
+</div>
+
+<div class="div-color">
+    <h4>Details:</h4>
+</div>
+    <div class="details">
+        <ul id="details-list" class="details-list-class"></ul>
+</div>
+</div>
 </body>
 
 <agm-map [latitude]="lat" [longitude]="lon" (mapClick)="onChoseLocation($event)">

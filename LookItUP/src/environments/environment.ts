@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "if u gonna help in coding, please pm in our gc for the key thanks",
+    apiKey: "-",
     authDomain: "look-it-up-d44f0.firebaseapp.com",
     databaseURL: "https://look-it-up-d44f0.firebaseio.com",
     projectId: "look-it-up-d44f0",
@@ -13,8 +13,8 @@ export const environment = {
     messagingSenderId: "153286798827",
     appId: "1:153286798827:web:758555f8595d8b7e"
   },
-  googleMapsKey: 'if u gonna help in coding, please pm in our gc for the key thanks'
-
+  googleMapsKey: '-'
+  
 };
 
 /*

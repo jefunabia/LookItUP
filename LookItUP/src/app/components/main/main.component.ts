@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UserModel } from '@app/models/user-model';
 import { UserService } from '@app/services/user.service';
 import { MapsService } from '@app/services/maps.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-main',
@@ -55,4 +56,13 @@ export class MainComponent implements OnInit {
     this.lon = event.coords.lng;
   }
 
+  openSideMenu(){
+    document.getElementById('side-bar').style.width = '500px';
+    document.getElementById('main').style.marginLeft = '500px';
+  }
+  
+  closeSideMenu(){
+    document.getElementById('side-bar').style.width = '0';
+    document.getElementById('main').style.marginLeft = '0';
+  }
 }
