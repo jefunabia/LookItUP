@@ -81,6 +81,7 @@ export class MainComponent implements OnInit {
   
   
   addFirstMarker(){//for 1st marker
+    this.AgmMarkers = [];
     var longitude;
     var latitude;
     var geocoder = new google.maps.Geocoder();
