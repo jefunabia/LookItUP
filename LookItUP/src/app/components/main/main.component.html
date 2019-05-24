@@ -43,7 +43,7 @@
     <h3>Enter Destination Point:</h3>
     <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" id = "test2" name="destination-point" placeholder="Destination Point" value="{{something}}"/>
    </form>
-   <button class="main-submit-button" (click)="wew()" (click) ="wew3()">GO!</button>
+   <button class="main-submit-button" (click)="addFirstMarker()" (click) ="addSecondMarker()" (click) = "calcRoute()">GO!</button>
  <div class="div-color">
     <h4>Public Transporation Vehicles:</h4>
 </div>
@@ -76,8 +76,8 @@
 </div>
 </body>
 
-<agm-map [latitude]="lat" [zoom] = "17" [longitude]="lon" (mapClick)="onChoseLocation($event)" id = "theMap">
-    <agm-marker [latitude]="lat" [longitude]="lon" id = "mark">
+<agm-map [zoom] = "17" [latitude]="initiallat" [longitude]="initiallon" (mapClick)="onChoseLocation($event)">
+    <agm-marker *ngFor="let i of AgmMarkers" [latitude]="i.lati" [longitude]="i.lngi" [label] ="i.label">
         <agm-info-window>
             <h3><strong>Hello there!</strong></h3>
             <p>You are here!</p>

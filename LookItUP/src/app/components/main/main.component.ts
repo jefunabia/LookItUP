@@ -8,6 +8,13 @@ import { MapsService } from '@app/services/maps.service';
 import {} from 'googlemaps';
 import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
 import { AgmMap, AgmMarker, MarkerManager } from '@agm/core';
+import {GoogleMapsAPIWrapper} from '@agm/core';
+
+interface marker{
+  lati:number;
+  lngi:number;
+  label?:string;
+}
 
 @Component({
   selector: 'app-main',
@@ -18,12 +25,24 @@ export class MainComponent implements OnInit {
   userModel: UserModel = {};
   inputsModel: InputsModel = {};
   
+  initiallat:number;
+  initiallon:number;
   lat: number;
   lon: number;
-  
+  lat2: number;
+  long2: number;
   location: Object;
+  agmMap: AgmMap;
+  
 
   
+  AgmMarkers: marker[] = [
+    {
+      lati:0,
+      lngi:0
+    }
+  ]
+    
 
   constructor(private toastr : ToastrService,
     private loginService: LoginService,
@@ -36,12 +55,15 @@ export class MainComponent implements OnInit {
       console.log(data);
    }
   )
+
+
+   this.AgmMarkers = [];
    
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lon = position.coords.longitude;
+        this.initiallat = position.coords.latitude;
+        this.initiallon = position.coords.longitude;
       })
     }
 
@@ -50,13 +72,15 @@ export class MainComponent implements OnInit {
         this.userModel = documentSnapshot.payload.data();
       }
     )
+      
 
+   
       
   }
 
   
   
-  wew(){//for 1st marker
+  addFirstMarker(){//for 1st marker
     var longitude;
     var latitude;
     var geocoder = new google.maps.Geocoder();
@@ -66,7 +90,7 @@ export class MainComponent implements OnInit {
                 if ((status === google.maps.GeocoderStatus.OK)) {
                     //this.lat = results[0].geometry.location.lat();
                     //this.lon = results[0].geometry.location.lng();
-                    this.wew2(results[0]);
+                    this.pushFirstMarker(results[0]);
                   } else {
                     alert("gg");
                 }
@@ -76,22 +100,34 @@ export class MainComponent implements OnInit {
 
   }
 
-  wew2(place){//for 1st marker
+  pushFirstMarker(place){//for 1st marker
     this.lat = place.geometry.location.lat();
     this.lon = place.geometry.location.lng();
+    this.initiallat = this.lat;
+    this.initiallon = this.lon;
+    this.AgmMarkers.push({
+      lati:Number(this.lat),
+      lngi:Number(this.lon),
+      label: "source"
+    });  
   }
 
-  wew3(){//trial for 2nd marker
+  
+  addSecondMarker(){//trial for 2nd marker
     var geocoder = new google.maps.Geocoder();
     //var address = "UP Cebu, Cebu City, Cebu, Philippines";
     var address = (<HTMLInputElement>document.getElementById("test2")).value;
             geocoder.geocode({ 'address': address }, (results, status)=> {
                 if ((status === google.maps.GeocoderStatus.OK)) {
-                    var lati = results[0].geometry.location.lat();
-                    var longi = results[0].geometry.location.lng();
-                    var latlng = new google.maps.LatLng(lati,longi);
-                    
-                    this.wew4(latlng);
+                    this.lat2 = results[0].geometry.location.lat();
+                    this.long2 = results[0].geometry.location.lng();
+                    this.AgmMarkers.push({
+                      lati: this.lat2,
+                      lngi: this.long2,
+                      label: "destination"
+                    });
+                    this.initiallat = (this.initiallat + this.lat2)/2;
+                    this.initiallon = (this.initiallon + this.long2)/2;
                   } else {
                     alert("gg");
                 }
@@ -100,12 +136,8 @@ export class MainComponent implements OnInit {
             //alert("Latitude: " + latitude + "\nLongitude: " + longitude);   
   }
 
-  wew4(latlong){//trial for 2nd marker
-    var marker = new google.maps.Marker({
-      position:latlong,
-      title: 'destination',
-      draggable: false
-    }); 
+  calcRoute(){
+    
   }
 
 
@@ -115,9 +147,11 @@ export class MainComponent implements OnInit {
   }
 
   onChoseLocation(event){
-    this.lat = event.coords.lat;
-    this.lon = event.coords.lng;
-  }
+    /*this.AgmMarkers.push({
+      lati: event.coords.lat,
+      lngi: event.coords.lng
+    });*/
+    }
 
   openSideMenu(){
     document.getElementById('side-bar').style.width = '500px';
