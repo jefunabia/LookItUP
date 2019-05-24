@@ -5,6 +5,9 @@ import { UserModel } from '@app/models/user-model';
 import { InputsModel } from '@app/models/inputs-model';
 import { UserService } from '@app/services/user.service';
 import { MapsService } from '@app/services/maps.service';
+import {} from 'googlemaps';
+import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
+import { AgmMap, AgmMarker, MarkerManager } from '@agm/core';
 
 @Component({
   selector: 'app-main',
@@ -17,20 +20,23 @@ export class MainComponent implements OnInit {
   
   lat: number;
   lon: number;
-
+  
   location: Object;
+
+  
 
   constructor(private toastr : ToastrService,
     private loginService: LoginService,
     private userService: UserService,
     private map: MapsService) {}
-
+    
   ngOnInit() {
     this.map.getLocation().subscribe(
       data => {
       console.log(data);
    }
   )
+   
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -47,6 +53,61 @@ export class MainComponent implements OnInit {
 
       
   }
+
+  
+  
+  wew(){//for 1st marker
+    var longitude;
+    var latitude;
+    var geocoder = new google.maps.Geocoder();
+    //var address = "UP Cebu, Cebu City, Cebu, Philippines";
+    var address = (<HTMLInputElement>document.getElementById("test")).value;
+            geocoder.geocode({ 'address': address }, (results, status)=> {
+                if ((status === google.maps.GeocoderStatus.OK)) {
+                    //this.lat = results[0].geometry.location.lat();
+                    //this.lon = results[0].geometry.location.lng();
+                    this.wew2(results[0]);
+                  } else {
+                    alert("gg");
+                }
+            });
+            //alert("Latitude: " + this.lat + "\nLongitude: " + this.lon);
+            //alert("Latitude: " + latitude + "\nLongitude: " + longitude);   
+
+  }
+
+  wew2(place){//for 1st marker
+    this.lat = place.geometry.location.lat();
+    this.lon = place.geometry.location.lng();
+  }
+
+  wew3(){//trial for 2nd marker
+    var geocoder = new google.maps.Geocoder();
+    //var address = "UP Cebu, Cebu City, Cebu, Philippines";
+    var address = (<HTMLInputElement>document.getElementById("test2")).value;
+            geocoder.geocode({ 'address': address }, (results, status)=> {
+                if ((status === google.maps.GeocoderStatus.OK)) {
+                    var lati = results[0].geometry.location.lat();
+                    var longi = results[0].geometry.location.lng();
+                    var latlng = new google.maps.LatLng(lati,longi);
+                    
+                    this.wew4(latlng);
+                  } else {
+                    alert("gg");
+                }
+            });
+            //alert("Latitude: " + this.lat + "\nLongitude: " + this.lon);
+            //alert("Latitude: " + latitude + "\nLongitude: " + longitude);   
+  }
+
+  wew4(latlong){//trial for 2nd marker
+    var marker = new google.maps.Marker({
+      position:latlong,
+      title: 'destination',
+      draggable: false
+    }); 
+  }
+
 
   signOut(){
     this.loginService.logoutUser();

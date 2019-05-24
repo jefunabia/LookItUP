@@ -39,11 +39,11 @@
     <a class="btn-close" (click)="closeSideMenu()">&times;</a>
     <form>
     <h3>Enter Starting Point:</h3>
-    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="starting-point" placeholder="Starting Point" value="{{something}}"/>
+    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" id = "test" name="starting-point" placeholder="Starting Point" value="{{something}}"/>
     <h3>Enter Destination Point:</h3>
-    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" name="destination-point" placeholder="Destination Point" value="{{something}}"/>
+    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" id = "test2" name="destination-point" placeholder="Destination Point" value="{{something}}"/>
    </form>
-   <button class="main-submit-button">GO!</button>
+   <button class="main-submit-button" (click)="wew()" (click) ="wew3()">GO!</button>
  <div class="div-color">
     <h4>Public Transporation Vehicles:</h4>
 </div>
@@ -76,8 +76,8 @@
 </div>
 </body>
 
-<agm-map [latitude]="lat" [longitude]="lon" (mapClick)="onChoseLocation($event)">
-    <agm-marker [latitude]="lat" [longitude]="lon">
+<agm-map [latitude]="lat" [zoom] = "17" [longitude]="lon" (mapClick)="onChoseLocation($event)" id = "theMap">
+    <agm-marker [latitude]="lat" [longitude]="lon" id = "mark">
         <agm-info-window>
             <h3><strong>Hello there!</strong></h3>
             <p>You are here!</p>
