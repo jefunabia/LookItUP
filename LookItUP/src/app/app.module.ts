@@ -33,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
+import { AgmDirectionModule } from 'agm-direction';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
       apiKey: environment.googleMapsKey
     }),
     HttpClientModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    AgmDirectionModule
   ],
   providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import {} from 'googlemaps';
 import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
 import { AgmMap, AgmMarker, MarkerManager } from '@agm/core';
 import {GoogleMapsAPIWrapper} from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
+
 
 interface marker{
   lati:number;
@@ -32,15 +34,11 @@ export class MainComponent implements OnInit {
   lat2: number;
   long2: number;
   location: Object;
-  agmMap: AgmMap;
-  
+  agmMap: AgmMap;  
 
   
   AgmMarkers: marker[] = [
-    {
-      lati:0,
-      lngi:0
-    }
+
   ]
     
 
@@ -78,7 +76,6 @@ export class MainComponent implements OnInit {
       
   }
 
-  
   
   addFirstMarker(){//for 1st marker
     this.AgmMarkers = [];
@@ -137,8 +134,67 @@ export class MainComponent implements OnInit {
             //alert("Latitude: " + latitude + "\nLongitude: " + longitude);   
   }
 
+
+  dir = undefined;
+
   calcRoute(){
-    
+    /*var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    //var map = new google.maps.Map(document.getElementById("theMap"));
+    //directionsDisplay.setMap(map);
+    directionsService.route({
+      origin: new google.maps.LatLng(this.lat, this.lon),
+      destination: new google.maps.LatLng(this.lat2,this.long2),
+      optimizeWaypoints:true,
+      travelMode: google.maps.TravelMode["DRIVING"]
+    }, function(response, status){
+      if(status === google.maps.DirectionsStatus.OK){
+        directionsDisplay.setDirections(response);
+      }
+      else{
+        alert("failed!");
+      }
+    });*/
+    var geocoder = new google.maps.Geocoder();
+    //var address = "UP Cebu, Cebu City, Cebu, Philippines";
+    var address = (<HTMLInputElement>document.getElementById("test")).value;
+    geocoder.geocode({ 'address': address }, (results, status)=> {
+        if ((status === google.maps.GeocoderStatus.OK)) {
+            this.lat = results[0].geometry.location.lat();
+            this.lon = results[0].geometry.location.lng();
+            /*this.AgmMarkers.push({
+              lati: this.lat2,
+              lngi: this.long2,
+              label: "destination"
+            });
+            this.initiallat = (this.initiallat + this.lat2)/2;
+            this.initiallon = (this.initiallon + this.long2)/2;*/
+          } else {
+            alert("gg");
+        }
+    });
+    var geocoder2 = new google.maps.Geocoder();
+    //var address = "UP Cebu, Cebu City, Cebu, Philippines";
+    var address2 = (<HTMLInputElement>document.getElementById("test2")).value;
+            geocoder.geocode({ 'address': address2 }, (results, status)=> {
+                if ((status === google.maps.GeocoderStatus.OK)) {
+                    this.lat2 = results[0].geometry.location.lat();
+                    this.long2 = results[0].geometry.location.lng();
+                    /*this.AgmMarkers.push({
+                      lati: this.lat2,
+                      lngi: this.long2,
+                      label: "destination"
+                    });
+                    this.initiallat = (this.initiallat + this.lat2)/2;
+                    this.initiallon = (this.initiallon + this.long2)/2;*/
+                  } else {
+                    alert("gg");
+                }
+            });
+    this.dir = {
+      origin: new google.maps.LatLng(this.lat, this.lon),
+      destination: new google.maps.LatLng(this.lat2, this.long2)
+    }
   }
 
 
