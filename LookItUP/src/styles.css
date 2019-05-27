@@ -1,8 +1,7 @@
-
-
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -372,9 +371,7 @@ textarea:focus {
  }
 
  .parallax {
-    /* The image used */
     background-image: url('assets/about.jpg');
-    /* Full height */
     height: 100%; 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -456,4 +453,47 @@ textarea:focus {
     text-align: center;
     padding: 200px;
     color: #2c2c2c;
+}
+
+.about-div {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 5%;
+    font-size: 18px;
+    padding-bottom: 50px;
+    background-color: #e0f2f2;
+    height: 500px;
+}
+
+.about-col-left {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+.about-col-right {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+.about-first-pic {
+    background-image: url('assets/lookitup.png');
+    height: 400px;
+    background-position: center; 
+}
+
+.about-second-pic {
+    background-image: url('assets/world.gif');
+    height: 420px;
+    background-position: center; 
+}
+
+.about-third-pic {
+    background-image: url('assets/commute.jpg');
+    height: 420px;
+    background-position: center; 
 }
