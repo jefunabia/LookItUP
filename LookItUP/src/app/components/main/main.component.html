@@ -1,13 +1,3 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>LookItUP | Find Your Path!</title>
-  <!--Font Awesome-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
-
 <body>
   <div class="nav-class">
       <nav class="navbar">
@@ -44,6 +34,7 @@
     <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text" id = "test2" name="destination-point" placeholder="Destination Point" value="{{something}}"/>
    </form>
    <button class="main-submit-button" (click) = "calcRoute()" >GO!</button>
+   <div class ="double-click"><p>Please double click the button to see the route.</p></div>
  <div class="div-color">
     <h4>Public Transporation Vehicles:</h4>
 </div>
