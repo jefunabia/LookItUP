@@ -3,6 +3,8 @@ import { RegisterService } from '@services/register.service';
 import { ToastrService } from 'ngx-toastr';
 import { UserModel } from '@app/models/user-model';
 import { RegisterErrorCode } from '@app/enums/register-error-code.enum';
+import { Title }     from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,9 +16,12 @@ export class RegisterComponent implements OnInit {
   userModel: UserModel = {};
 
   constructor(private service : RegisterService,
-    private toastr : ToastrService) { }
+    private toastr : ToastrService,
+    private router: Router, 
+    private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('LookItUP | Register');
   }
 
   resetForm(){

@@ -10,7 +10,8 @@ import { mapChildrenIntoArray } from '@angular/router/src/url_tree';
 import { AgmMap, AgmMarker, MarkerManager } from '@agm/core';
 import {GoogleMapsAPIWrapper} from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
-
+import { Title }     from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 interface marker{
   lati:number;
@@ -45,7 +46,9 @@ export class MainComponent implements OnInit {
   constructor(private toastr : ToastrService,
     private loginService: LoginService,
     private userService: UserService,
-    private map: MapsService) {}
+    private map: MapsService,
+    private router: Router, 
+    private titleService: Title) {}
     
   ngOnInit() {
     this.map.getLocation().subscribe(
@@ -54,6 +57,7 @@ export class MainComponent implements OnInit {
    }
   )
 
+  this.titleService.setTitle('LookItUP | Web App');
 
    this.AgmMarkers = [];
    
@@ -281,7 +285,7 @@ showBusDetails(){
 showTrainDetails(){
   var detailsList = document.getElementById("details-list");
   detailsList.innerHTML = "";
-  var listItem = this.createListItemWithCost("Train, ",30);
+  var listItem = this.createListItemWithCost("Train, ", 0);
   detailsList.appendChild(listItem);
 }
 

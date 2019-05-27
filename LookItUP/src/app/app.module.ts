@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
@@ -36,6 +36,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { AgmDirectionModule } from 'agm-direction';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,13 @@ import { AgmDirectionModule } from 'agm-direction';
     GooglePlaceModule,
     AgmDirectionModule
   ],
-  providers: [RegisterService, PasswordSecurityService, AuthGuardService, UserService, TokenService],
+  providers: [RegisterService, 
+    PasswordSecurityService, 
+    AuthGuardService, 
+    UserService, 
+    TokenService, 
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
