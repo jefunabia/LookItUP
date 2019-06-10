@@ -13,7 +13,6 @@
 - To provide a cost-effective and reliable travel experience.
 - To provide important information when travelling.
 
-**Features:**
 ## Interactive Map
 **LookItUP** uses Google Maps API for all the main features.
 
