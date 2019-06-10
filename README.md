@@ -7,7 +7,7 @@
 
 **LookItUP** is a website created by using AngularJS and Google Maps API.
 
-### Code Implementation, Research and Documentation by:
+## Code Implementation, Research and Documentation by:
 - Janelle Elaiza Unabia
 - Jun Neil Dionne Balite
 - Eef Sabine Alosbaños
