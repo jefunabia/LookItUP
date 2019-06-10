@@ -7,11 +7,6 @@
 
 **LookItUP** is a website created by using AngularJS and Google Maps API.
 
-## Code Implementation, Research and Documentation by:
-- Janelle Elaiza Unabia
-- Jun Neil Dionne Balite
-- Eef Sabine Alosbaños
-
 **LookItUP aims to help commuters by providing convenience in their day to day travels.**
 
 **LookItUP also aims to:**
@@ -37,3 +32,8 @@ After entering the points, the points will be marked and a route will be shown f
 Information of the available transportation vehicles will then be displayed, such as their: description, and cost.
 
 Transporataion Services Applications are also displayed, including a link to their websites for further convenience.
+
+## Code Implementation, Research and Documentation by:
+- Janelle Elaiza Unabia
+- Jun Neil Dionne Balite
+- Eef Sabine Alosbaños
