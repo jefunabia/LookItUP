@@ -1,5 +1,10 @@
 # LookItUP
 ### CMSC 126 (Web Architecture Final Project)
+
+![alt text][logo]
+
+[logo]: http://tinypic.com/r/5331go/9 "LookItUP"
+
 **LookItUP** is a website created by using AngularJS and Google Maps API.
 
 ### Code Implementation, Research and Documentation by:
