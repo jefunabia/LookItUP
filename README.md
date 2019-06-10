@@ -3,7 +3,7 @@
 
 ![alt text][logo]
 
-[logo]: http://tinypic.com/r/5331go/9 "LookItUP"
+[logo]: http://i65.tinypic.com/5331go.png "LookItUP"
 
 **LookItUP** is a website created by using AngularJS and Google Maps API.
 
